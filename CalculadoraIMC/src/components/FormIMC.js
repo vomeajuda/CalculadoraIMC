@@ -1,7 +1,7 @@
 import { View, TextInput, Button, StyleSheet } from 'react-native';
 import Result from './Result';
-import ResultClassif from './ResultClassif';
-import ResultPesos from './ResultPesos';
+import Classification from './Classification';
+import IdealWeight from './IdealWeight';
 import React, { useState } from 'react';
 
 const FormIMC = () => {
@@ -59,8 +59,8 @@ const FormIMC = () => {
             />
             <Button title="Calcular IMC" onPress={calcularIMC} />
             {imc && <Result imc={imc} />}
-            {classif && <ResultClassif classif={classif} />}
-            {pesoMin && <ResultPesos pesoMin={pesoMin} pesoMax={pesoMax} />}
+            {classif && <Classification classif={classif} />}
+            {pesoMin && <IdealWeight pesoMin={pesoMin} pesoMax={pesoMax} />}
         </View>
     );
 };
