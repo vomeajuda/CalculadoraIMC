@@ -67,13 +67,14 @@ const FormIMC = () => {
 
 const styles = StyleSheet.create({ 
     formContainer: {
-        backgroundColor: '#f0f0f0',
+        backgroundColor: 'gray',
         padding: 16,
         borderRadius: 10,
     },
     input: {
         height: 40,
-        borderColor: 'gray',
+        borderColor: 'white',
+        color: 'white',
         borderWidth: 1,
         marginBottom: 12,
         paddingHorizontal: 8,
