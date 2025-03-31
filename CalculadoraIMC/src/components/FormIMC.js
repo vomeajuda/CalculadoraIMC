@@ -1,6 +1,7 @@
 import { View, TextInput, Button, StyleSheet } from 'react-native';
 import Result from './Result';
 import ResultClassif from './ResultClassif';
+import ResultPesos from './ResultPesos';
 import React, { useState } from 'react';
 
 const FormIMC = () => {
@@ -8,12 +9,15 @@ const FormIMC = () => {
     const [altura, setAltura] = useState('');
     const [imc, setImc] = useState(null);
     const [classif, setClassif] = useState('');
+    const [pesoMin, setPesoMin] = useState('');
+    const [pesoMax, setPesoMax] = useState('');
 
     const calcularIMC = () => {
         if (peso && altura) {
             const alturaMetros = parseFloat(altura) / 100;
             const imcCalculado = (parseFloat(peso) / (alturaMetros * alturaMetros)).toFixed(2);
             classificarIMC(imcCalculado);
+            pesosIdeais(altura);
             setImc(imcCalculado);
         }
     };
@@ -25,6 +29,16 @@ const FormIMC = () => {
         else if (imc >= 30 && imc < 34.9) setClassif('Obesidade grau 1');
         else if (imc >= 35 && imc < 39.9) setClassif('Obesidade grau 2');
         else if (imc >= 40) setClassif('Obesidade grau 3');
+    }
+
+    const pesosIdeais = () => {
+        if (peso && altura) {
+            const alturaMetros = parseFloat(altura) / 100;
+            const pesoMin = (18.5 * alturaMetros * alturaMetros).toFixed(2);
+            const pesoMax = (24.9 * alturaMetros * alturaMetros).toFixed(2);
+            setPesoMin(pesoMin);
+            setPesoMax(pesoMax);
+        }
     }
 
     return (
@@ -46,6 +60,7 @@ const FormIMC = () => {
             <Button title="Calcular IMC" onPress={calcularIMC} />
             {imc && <Result imc={imc} />}
             {classif && <ResultClassif classif={classif} />}
+            {pesoMin && <ResultPesos pesoMin={pesoMin} pesoMax={pesoMax} />}
         </View>
     );
 };
