@@ -13,12 +13,14 @@ const FormIMC = () => {
     const [pesoMax, setPesoMax] = useState('');
 
     const calcularIMC = () => {
-        if (peso && altura) {
+        if (!isNaN(peso) && !isNaN(altura) && parseFloat(peso) > 0 && parseFloat(altura) > 0) {
             const alturaMetros = parseFloat(altura) / 100;
             const imcCalculado = (parseFloat(peso) / (alturaMetros * alturaMetros)).toFixed(2);
             classificarIMC(imcCalculado);
             pesosIdeais(altura);
             setImc(imcCalculado);
+        } else {
+            alert('Por favor, insira valores válidos para peso e altura.');
         }
     };
 
