@@ -1,9 +1,9 @@
 import React from "react";
 import { Text, StyleSheet } from "react-native";
 
-const Result = ({ imc }) => {
+const Result = ({ classif }) => {
     return (
-        <Text style={styles.resultText}>Seu IMC é: {imc}</Text>
+        <Text style={styles.resultText}>Seu IMC é: {classif}</Text>
     );
 };
 
