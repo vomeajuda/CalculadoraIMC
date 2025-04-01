@@ -8,3 +8,6 @@
 
 ### Funcionamento e Objetivo:
 Este pequeno aplicativo para celular permite que você calcule o imc, classificação do imc e pesos ideias em um instante.
+
+### Video demonstração:
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/IuS7vqNTcDo/0.jpg)](https://www.youtube.com/watch?v=IuS7vqNTcDo)
