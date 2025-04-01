@@ -1,13 +1,13 @@
 import { Text, StyleSheet } from 'react-native';
 import React, { useState } from 'react';
 
-const Title = () => {
+const Title = () => { //retorna a escrita do titulo
     return (
         <Text style={styles.title}>Calculadora de IMC</Text>
     );
 };
 
-const styles = StyleSheet.create({
+const styles = StyleSheet.create({ //estilo do titulo
     title: {
         fontSize: 32,
         fontWeight: 'bold',
@@ -17,4 +17,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default Title;
+export default Title; //exporta o titulo
