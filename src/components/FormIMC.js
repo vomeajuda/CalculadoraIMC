@@ -21,9 +21,9 @@ const FormIMC = () => { //inicia a função anonima do formulário
         const pesoCorrigido = substituirVirgulaPorPonto(peso);
         const alturaCorrigida = substituirVirgulaPorPonto(altura); //correção de valores com vírgula
 
-        if (!isNaN(peso) && !isNaN(altura) && parseFloat(peso) > 0 && parseFloat(altura) > 0) { //verifica se os valores de peso e altura são válidos
-            const alturaMetros = parseFloat(altura) / 100; //transforma a altura em metros
-            const imcCalculado = (parseFloat(peso) / (alturaMetros * alturaMetros)).toFixed(2); //calcula o IMC
+        if (!isNaN(pesoCorrigido) && !isNaN(alturaCorrigida) && parseFloat(pesoCorrigido) > 0 && parseFloat(alturaCorrigida) > 0) { //verifica se os valores de peso e altura são válidos
+            const alturaMetros = parseFloat(alturaCorrigida) / 100; //transforma a altura em metros
+            const imcCalculado = (parseFloat(pesoCorrigido) / (alturaMetros * alturaMetros)).toFixed(2); //calcula o IMC
             classificarIMC(imcCalculado); //chama a função para classificar o IMC
             pesosIdeais(altura); //chama a função para calcular os pesos ideais
             setImc(imcCalculado); //atualiza o estado do IMC
@@ -42,8 +42,9 @@ const FormIMC = () => { //inicia a função anonima do formulário
     }
 
     const pesosIdeais = () => { //calcula os pesos ideais com base na altura e atualiza os estados de peso mínimo e máximo
+        const alturaCorrigida = substituirVirgulaPorPonto(altura); //corrige a altura
         if (peso && altura) {
-            const alturaMetros = parseFloat(altura) / 100;
+            const alturaMetros = parseFloat(alturaCorrigida) / 100;
             const pesoMin = (18.5 * alturaMetros * alturaMetros).toFixed(2);
             const pesoMax = (24.9 * alturaMetros * alturaMetros).toFixed(2);
             setPesoMin(pesoMin);
