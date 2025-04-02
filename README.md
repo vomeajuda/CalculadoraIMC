@@ -7,7 +7,7 @@
 4. Rodar o comando npx expo start e acessar o qr code fornecido no terminal em seu celular no app Expo Go
 
 ### Funcionamento e Objetivo:
-Este pequeno aplicativo para celular permite que você calcule o imc, classificação do imc e pesos ideias em um instante.
+Este pequeno aplicativo para celular permite que você calcule o imc, classificação do imc e pesos ideais em um instante.
 
 ### Video demonstração:
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/IuS7vqNTcDo/0.jpg)](https://www.youtube.com/watch?v=IuS7vqNTcDo)
