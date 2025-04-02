@@ -13,7 +13,14 @@ const FormIMC = () => { //inicia a função anonima do formulário
     const [pesoMin, setPesoMin] = useState('');
     const [pesoMax, setPesoMax] = useState('');
 
+    const substituirVirgulaPorPonto = (texto) => { //função para trocar virgulas por pontos
+        return texto.replace(/,/g, '.');
+    };
+
     const calcularIMC = () => { //função anonima para calcular o IMC
+        const pesoCorrigido = substituirVirgulaPorPonto(peso);
+        const alturaCorrigida = substituirVirgulaPorPonto(altura); //correção de valores com vírgula
+
         if (!isNaN(peso) && !isNaN(altura) && parseFloat(peso) > 0 && parseFloat(altura) > 0) { //verifica se os valores de peso e altura são válidos
             const alturaMetros = parseFloat(altura) / 100; //transforma a altura em metros
             const imcCalculado = (parseFloat(peso) / (alturaMetros * alturaMetros)).toFixed(2); //calcula o IMC
