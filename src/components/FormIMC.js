@@ -42,7 +42,7 @@ const FormIMC = () => {
                 value={altura}
                 onChangeText={setAltura}
             />
-            <Button title="Calcular IMC" onPress={calcularIMC} />
+            <Button color="green" title="Calcular IMC" onPress={calcularIMC} />
             {imc && <Result imc={imc} />}
             {imc && <Classification imc={imc} />}
             {imc && <IdealWeight alturaCorrigida={alturaCorrigida} />}
